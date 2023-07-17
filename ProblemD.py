@@ -7,8 +7,7 @@ for index,x in enumerate(cont):
         count += 1
 print(count)
 """
-from itertools import product
-
+"""from time import process_time
 n = int(input())
 nums = [int(x) for x in input().split(" ")]
 pairs = []
@@ -23,3 +22,22 @@ for i in pairs:
             pairs.remove(i)
             pairs.remove(j)
 print(count)
+print(process_time())
+"""
+
+
+n = int(input())
+nums = [int(x) for x in input().split(" ")]
+
+count = 0
+pairs = {}
+
+for i in nums:
+    pairs[i] = nums.index(i) + 1
+
+for i in pairs:
+    if i == pairs[pairs[i]]:
+        count += 1
+        
+print(count // 2)
+
